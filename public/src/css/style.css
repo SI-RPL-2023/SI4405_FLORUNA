@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.text-justify{
+    text-align: justify;
+}
+
+.nav-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#Header{
+    background-image: url('../img/background-header.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#Donate{
+    background-image: url('../img/background-donate.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bg-transparant{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+#Protect .card-img{
+    max-height: 600px;
+    background-size: cover;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+#Protect .card-img:hover{
+    transform: scale(1.05);
+}
