@@ -42,7 +42,7 @@
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="/register" class="nav-link active fw-bold">Sign In</a>
+                        <a href="/login" class="nav-link active fw-bold">Sign In</a>
                     </li>
                 </ul>
             </div>
