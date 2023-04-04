@@ -84,3 +84,7 @@
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
 }
+
+#Profile .profile-img{
+    max-width: 500px;
+}
