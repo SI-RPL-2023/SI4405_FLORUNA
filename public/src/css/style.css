@@ -71,3 +71,16 @@
 #Register .text-small{
     font-size: 14px;
 }
+
+
+#Dashboard .card-img{
+    max-height: 600px;
+    background-size: cover;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+#Dashboard .bg-transparant{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
