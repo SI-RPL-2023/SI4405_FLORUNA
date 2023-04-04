@@ -45,24 +45,30 @@
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     @guest
-                    <li class="nav-item">
-                        <a href="/login" class="nav-link active fw-bold">Sign In</a>
-                    </li>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link active fw-bold">Sign In</a>
+                        </li>
                     @endguest
                     @auth
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <a class="nav-link fw-bold dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-circle"></i> {{ auth()->user()->username }}
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
-                              <li><a class="dropdown-item" href="#">Profile</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
-                          </div>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a class="nav-link fs-5 text-dark dropdown-toggle" href="#" role="button"
+                                    id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i> {{ auth()->user()->username }}
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                                    @if (auth()->user()->role == 'Admin')
+                                        <li><a class="dropdown-item" href="/dashboard">Dashboard Admin</a></li>
+                                    @endif
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                                </ul>
+                            </div>
 
-                    </li>
+                        </li>
                     @endauth
                 </ul>
             </div>
