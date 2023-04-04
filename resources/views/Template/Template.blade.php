@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="{{ asset('src/img/logo.png') }}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -42,7 +42,7 @@
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active fw-bold">Sign In</a>
+                        <a href="/register" class="nav-link active fw-bold">Sign In</a>
                     </li>
                 </ul>
             </div>

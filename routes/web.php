@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegistrasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Homepage');
 });
+
+Route::get('/register', [RegistrasiController::class, 'index']);
+Route::post('/register', [RegistrasiController::class, 'register']);

@@ -41,3 +41,19 @@
 #Protect .card-img:hover{
     transform: scale(1.05);
 }
+
+#Register{
+    background-image: url('../img/background-register.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#Register .round{
+    border-radius: 20px;
+}
+
+#Register .text-small{
+    font-size: 14px;
+}
