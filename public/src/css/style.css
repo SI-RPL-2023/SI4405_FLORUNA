@@ -42,6 +42,20 @@
     transform: scale(1.05);
 }
 
+#Donate .card{
+    border-radius: 20px;
+}
+
+#Donate .list-group-item{
+    border-radius: 20px;
+}
+
+#Donate .card-img-top{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+
 #Register{
     background-image: url('../img/background-register.jpg');
     background-repeat: no-repeat;

@@ -13,12 +13,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    {{-- Boostrap Icon --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
     <title>Floruna</title>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="{{ asset('src/img/logo.png') }}" alt="">
@@ -41,9 +44,26 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
+                    @guest
                     <li class="nav-item">
                         <a href="/login" class="nav-link active fw-bold">Sign In</a>
                     </li>
+                    @endguest
+                    @auth
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link fw-bold dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> {{ auth()->user()->username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </div>
+
+                    </li>
+                    @endauth
                 </ul>
             </div>
         </div>
