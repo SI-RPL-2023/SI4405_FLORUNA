@@ -24,4 +24,17 @@ class AdminController extends Controller
         return view('Admin.Detail_Data_User', compact('user'));
 
     }
+
+    public function data_comunity()
+    {
+        $user = User::where('role', '=', 'Comunity')->get();
+        return view('Admin.Data_Comunity', compact('user'));
+    }
+
+    public function detail_Comunity($id)
+    {
+        $user = User::find($id);
+        return view('Admin.Detail_Comunity', compact('user'));
+
+    }
 }
