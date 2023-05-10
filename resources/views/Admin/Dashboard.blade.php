@@ -1,7 +1,7 @@
 @extends('Admin.AdminTemplate')
 
 @section('konten')
-    <section id="Dashboard" class="bg-secondary">
+    <section id="Dashboard">
         <div class="container">
             <div class="donasi py-5">
                 <div class="mb-2">

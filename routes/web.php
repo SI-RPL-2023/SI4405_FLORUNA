@@ -31,5 +31,8 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/profile', [ProfileController::class, 'index']);
 
 Route::get('/dashboard', [AdminController::class, 'index']);
+Route::get('/data/user', [AdminController::class, 'data_user']);
+Route::get('/data/user/detail/{id}', [AdminController::class, 'detail_user']);
+
 
 Route::get('/logout', [LogoutController::class, 'logout']);

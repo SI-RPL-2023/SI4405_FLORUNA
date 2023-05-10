@@ -19,7 +19,7 @@
     <title>Floruna</title>
 </head>
 
-<body>
+<body class="bg-admin">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container-fluid">
@@ -36,8 +36,16 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Data</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Data
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/data/user">Data User</a></li>
+                            <li><a class="dropdown-item" href="/data/comunity">Data Comunity</a></li>
+                            <li><a class="dropdown-item" href="/data/comunity">Data Postingan</a></li>
+                        </ul>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
