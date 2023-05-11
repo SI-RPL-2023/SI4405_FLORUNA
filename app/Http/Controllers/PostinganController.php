@@ -42,4 +42,13 @@ class PostinganController extends Controller
 
         return back();
     }
+
+    public function delete($id)
+    {
+        $posting = Postingan::find($id);
+
+        $posting->delete();
+
+        return back();
+    }
 }

@@ -45,6 +45,7 @@ Route::get('/data/postingan', [AdminController::class, 'data_postingan']);
 Route::get('/data/postingan/detail/{id}', [AdminController::class, 'detail_comunity']);
 
 Route::get('/data/postingan/konfirmasi/{id}', [PostinganController::class, 'konfirmasi']);
+Route::get('/data/postingan/delete/{id}', [PostinganController::class, 'delete']);
 
 
 Route::get('/logout', [LogoutController::class, 'logout']);
