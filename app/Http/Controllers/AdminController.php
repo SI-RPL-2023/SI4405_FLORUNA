@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Postingan;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -36,5 +37,11 @@ class AdminController extends Controller
         $user = User::find($id);
         return view('Admin.Detail_Comunity', compact('user'));
 
+    }
+
+    public function data_postingan()
+    {
+        $postingan = Postingan::all();
+        return view('Admin.Data_Postingan', compact('postingan'));
     }
 }

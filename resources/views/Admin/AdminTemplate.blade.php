@@ -44,7 +44,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/data/user">Data User</a></li>
                             <li><a class="dropdown-item" href="/data/comunity">Data Comunity</a></li>
-                            <li><a class="dropdown-item" href="/data/comunity">Data Postingan</a></li>
+                            <li><a class="dropdown-item" href="/data/postingan">Data Postingan</a></li>
                         </ul>
                     </li>
                 </ul>
