@@ -44,4 +44,12 @@ class AdminController extends Controller
         $postingan = Postingan::all();
         return view('Admin.Data_Postingan', compact('postingan'));
     }
+
+    public function detail_posting($id)
+    {
+        $posting = Postingan::find($id);
+        return view('Detail_Postingan', compact('posting'));
+
+    }
+
 }
