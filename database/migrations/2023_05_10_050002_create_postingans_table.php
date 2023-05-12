@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('postingans', function (Blueprint $table) {
             $table->id();
+            $table->integer('komunitas_id');
             $table->text('gambar');
             $table->text('judul');
             $table->text('lokasi');

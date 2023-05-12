@@ -24,13 +24,27 @@ class PostinganController extends Controller
             . '.' . $request->foto->extension();
         $request->foto->move($path, $foto);
 
+        $posting->komunitas_id = auth()->user()->id;
         $posting->judul = $request->judul;
         $posting->lokasi = $request->lokasi;
         $posting->keterangan = $request->keterangan;
         $posting->gambar = $foto;
         $posting->save();
 
-        return back();
+        return redirect('/komunitas/posting');
+    }
+
+    public function data_posting()
+    {
+        $posting = Postingan::where('komunitas_id', '=', auth()->user()->id)->get();
+        return view('Data_Postingan_Komunitas', compact('posting'));
+    }
+
+    public function detail($id)
+    {
+        $posting = Postingan::find($id);
+        return view('Detail_Postingan', compact('posting'));
+
     }
 
     public function konfirmasi($id)

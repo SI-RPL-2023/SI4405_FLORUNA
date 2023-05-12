@@ -2,7 +2,7 @@
 
 @section('konten')
     <section id="Postingan" class="min-vh-100 bg-admin">
-        <div class="container my-5 py-5">
+        <div class="container text-white py-5">
             <div class="text-center py-5">
                 <h1>Upload Postingan</h1>
             </div>

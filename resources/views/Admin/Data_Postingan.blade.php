@@ -2,7 +2,7 @@
 
 @section('konten')
     <section id="DataUser" class="min-vh-100">
-        <div class="container my-5 py-5">
+        <div class="container py-5">
             <div class="row row-cols-1 row-cols-md-2 g-5">
                 @foreach ($postingan as $data)
                     <div class="col">
@@ -21,16 +21,15 @@
                                 @if ($data->status == 'Menunggu Konfirmasi')
                                     <a href="/data/postingan/konfirmasi/{{ $data->id }}"
                                         class="btn btn-success px-4">Konfirmasi</a>
-                                    @else
+                                @else
                                     <button disabled="disabled" class="btn btn-success">Terkonfirmasi</button>
                                 @endif
                                 <a href="/data/postingan/detail/{{ $data->id }}" class="btn btn-primary px-5">Detail</a>
                             </div>
                         </div>
                     </div>
+                @endforeach
             </div>
-            @endforeach
-        </div>
         </div>
     </section>
 @endsection
