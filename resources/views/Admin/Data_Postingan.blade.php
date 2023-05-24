@@ -4,6 +4,12 @@
     <section id="DataUser" class="min-vh-100">
         <div class="container py-5">
             <div class="row row-cols-1 row-cols-md-2 g-5">
+                @if (count($postingan) == 0)
+                    <div class="position-absolute top-50 start-50 translate-middle text-center">
+                        <h1 class="icon-none"><i class="bi bi-camera text-white"></i></h1>
+                        <h1 class="display-4 fw-bold text-white">No Post Yet</h1>
+                    </div>
+                @endif
                 @foreach ($postingan as $data)
                     <div class="col">
                         <div class="card h-100 bg-white p-4">

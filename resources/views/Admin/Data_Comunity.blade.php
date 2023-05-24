@@ -4,6 +4,12 @@
     <section id="DataUser" class="min-vh-100">
         <div class="container my-5 py-5">
             <div class="row row-cols-1 row-cols-md-2 g-5">
+                @if (count($user) == 0)
+                    <div class="position-absolute top-50 start-50 translate-middle text-center">
+                        <h1 class="icon-none"><i class="bi bi-people text-white"></i></h1>
+                        <h1 class="display-4 fw-bold text-white">No Community Yet</h1>
+                    </div>
+                @endif
                 @foreach ($user as $users)
                     <div class="col">
                         <div class="card h-100 bg-secondary text-white p-4">

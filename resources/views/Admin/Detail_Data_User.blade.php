@@ -2,7 +2,7 @@
 
 @section('konten')
     <section id="DetailUser" class="min-vh-100">
-        <div class="container my-5 py-5">
+        <div class="container py-5">
             <h1 class="text-white">Detail User</h1>
             <div class="bg-secondary p-5 text-white">
                 <div class="row align-items-center">
