@@ -31,6 +31,9 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/profile', [ProfileController::class, 'index']);
 
+Route::get('/discover/news',[PostinganController::class, 'allpost']);
+Route::get('/discover/news/detail/{id}',[PostinganController::class, 'detail_news']);
+
 Route::get('/komunitas/posting', [PostinganController::class, 'data_posting']);
 Route::get('/postingan/detail/{id}', [PostinganController::class, 'detail']);
 Route::get('/posting', [PostinganController::class, 'index']);

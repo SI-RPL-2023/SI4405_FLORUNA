@@ -1,7 +1,7 @@
 @extends('Template.Template')
 
 @section('konten')
-    <section id="Postingan" class="bg-secondary min-vh-100">
+    <section id="Postingan" class="bg-admin min-vh-100">
         <div class="container py-5">
             <div class="row row-cols-1 row-cols-md-2 g-5">
                 @foreach ($posting as $data)
