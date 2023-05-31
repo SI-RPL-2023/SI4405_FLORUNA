@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\File;
 class PostinganController extends Controller
 {
 
-=======
+
     public function allpost()
     {
         $first = Postingan::where('status','=','Terkonfirmasi')->latest()->first();
@@ -27,7 +27,6 @@ class PostinganController extends Controller
         return view('News_Detail', compact('news'));
     }
 
->>>>>>> putri_alviona
     public function index()
     {
         return view('Postingan');

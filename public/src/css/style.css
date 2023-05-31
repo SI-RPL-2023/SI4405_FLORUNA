@@ -93,6 +93,14 @@
     background-color: #3C6255;
 }
 
+.btn-kuning{
+    background-color: #EAE7B1;
+}
+
 .icon-none{
     font-size: 200px;
+}
+
+.text-small{
+    font-size: 12px;
 }
