@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DonasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostinganController;
@@ -34,6 +35,11 @@ Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/discover/news',[PostinganController::class, 'allpost']);
 Route::get('/discover/news/detail/{id}',[PostinganController::class, 'detail_news']);
 
+Route::get('/donation',[DonasiController::class, 'index']);
+Route::get('/komunitas/donation',[DonasiController::class, 'donasi_kom']);
+Route::get('/open/donation',[DonasiController::class, 'open']);
+Route::post('/open/donation',[DonasiController::class, 'post_kom']);
+
 Route::get('/komunitas/posting', [PostinganController::class, 'data_posting']);
 Route::get('/postingan/detail/{id}', [PostinganController::class, 'detail']);
 Route::get('/posting', [PostinganController::class, 'index']);
@@ -51,6 +57,10 @@ Route::get('/data/postingan/detail/{id}', [AdminController::class, 'detail_posti
 
 Route::get('/data/postingan/konfirmasi/{id}', [PostinganController::class, 'konfirmasi']);
 Route::get('/data/postingan/delete/{id}', [PostinganController::class, 'delete']);
+
+Route::get('/data/donasi', [DonasiController::class, 'donasi_adm']);
+Route::get('/data/donasi/add', [DonasiController::class, 'add']);
+Route::post('/data/donasi/add', [DonasiController::class, 'post_adm']);
 
 
 Route::get('/logout', [LogoutController::class, 'logout']);
