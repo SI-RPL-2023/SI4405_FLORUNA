@@ -45,6 +45,7 @@
                             <li><a class="dropdown-item" href="/data/user">Data User</a></li>
                             <li><a class="dropdown-item" href="/data/comunity">Data Comunity</a></li>
                             <li><a class="dropdown-item" href="/data/postingan">Data Postingan</a></li>
+                            <li><a class="dropdown-item" href="/data/donasi">Data Donasi</a></li>
                         </ul>
                     </li>
                 </ul>

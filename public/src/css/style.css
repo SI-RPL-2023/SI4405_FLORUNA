@@ -104,3 +104,6 @@
 .text-small{
     font-size: 12px;
 }
+.btn.bg-yellow{
+    background-color: #fdfac1;
+}
