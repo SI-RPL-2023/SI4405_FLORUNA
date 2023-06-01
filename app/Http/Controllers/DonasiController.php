@@ -10,7 +10,8 @@ class DonasiController extends Controller
 {
     public function index()
     {
-        return view('Donasi');
+        $donasi = Donasi::where('status','=','Terkonfirmasi')->get();
+        return view('Donasi', compact('donasi'));
     }
 
     public function open()
@@ -81,5 +82,20 @@ class DonasiController extends Controller
         $donasi->save();
 
         return redirect('/data/donasi');
+    }
+
+    public function detail_adm($id)
+    {
+        $donasi = Donasi::find($id);
+        return view('Admin.Detail_Donasi', compact('donasi'));
+    }
+
+    public function konfirmasi($id)
+    {
+        $donasi = Donasi::find($id);
+        $donasi->status = "Terkonfirmasi";
+        $donasi->save();
+
+        return back();
     }
 }

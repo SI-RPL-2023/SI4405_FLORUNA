@@ -36,12 +36,19 @@
                                     <p>Deadline</p>
                                 </div>
                             </div>
-                            @if ($data->status == 'Belum Terkonfirmasi')
-                                <button href="#!" class="btn btn-warning w-100">{{ $data->status }}</button>
-                            @endif
-                            @if ($data->status == 'Terkonfirmasi')
-                                <button href="#!" class="btn btn-success w-100">{{ $data->status }}</button>
-                            @endif
+                            <div class="row">
+                                <div class="col">
+                                    @if ($data->status == 'Belum Terkonfirmasi')
+                                        <button href="#!" class="btn btn-warning w-100" disabled>{{ $data->status }}</button>
+                                    @endif
+                                    @if ($data->status == 'Terkonfirmasi')
+                                        <button href="#!" class="btn btn-success w-100" disabled>{{ $data->status }}</button>
+                                    @endif
+                                </div>
+                                <div class="col">
+                                    <a href="/data/donasi/detail/{{ $data->id }}" class="btn btn-primary w-100">Detail</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -61,6 +61,8 @@ Route::get('/data/postingan/delete/{id}', [PostinganController::class, 'delete']
 Route::get('/data/donasi', [DonasiController::class, 'donasi_adm']);
 Route::get('/data/donasi/add', [DonasiController::class, 'add']);
 Route::post('/data/donasi/add', [DonasiController::class, 'post_adm']);
+Route::get('/data/donasi/detail/{id}', [DonasiController::class, 'detail_adm']);
+Route::get('/donasi/konfirmasi/{id}', [DonasiController::class, 'konfirmasi']);
 
 
 Route::get('/logout', [LogoutController::class, 'logout']);
