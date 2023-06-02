@@ -32,7 +32,7 @@
                                     <p>Deadline</p>
                                 </div>
                             </div>
-                            <button href="#!" class="btn btn-success w-100">Donate</button>
+                            <a href="/donation/detail/{{ $data->id }}" class="btn btn-success w-100">Donate</a>
                         </div>
                     </div>
                 </div>

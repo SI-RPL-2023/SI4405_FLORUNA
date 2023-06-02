@@ -7,6 +7,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostinganController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrasiController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,9 +37,11 @@ Route::get('/discover/news',[PostinganController::class, 'allpost']);
 Route::get('/discover/news/detail/{id}',[PostinganController::class, 'detail_news']);
 
 Route::get('/donation',[DonasiController::class, 'index']);
+Route::get('/donation/detail/{id}',[DonasiController::class, 'detail']);
 Route::get('/komunitas/donation',[DonasiController::class, 'donasi_kom']);
 Route::get('/open/donation',[DonasiController::class, 'open']);
 Route::post('/open/donation',[DonasiController::class, 'post_kom']);
+Route::post('/donate/input', [TransaksiController::class, 'donate']);
 
 Route::get('/komunitas/posting', [PostinganController::class, 'data_posting']);
 Route::get('/postingan/detail/{id}', [PostinganController::class, 'detail']);

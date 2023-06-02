@@ -5,8 +5,6 @@
         <div class="container py-5">
             <div class="card h-100 bg-white p-4">
                 <div class="card-body text-center">
-                    <div class="text-end"><a href="/data/postingan/delete/{{ $donasi->id }}"><i
-                                class="bi bi-trash-fill fs-3 text-danger"></i></a></div>
                     <h1 class="display-5">{{ $donasi->judul }}</h1>
                     <img src="{{ asset('upload/Donasi/' . $donasi->foto) }}" alt="" width="300">
                     <div class="card-text text-justify my-5">
