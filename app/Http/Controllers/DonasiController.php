@@ -90,6 +90,12 @@ class DonasiController extends Controller
         return view('Admin.Detail_Donasi', compact('donasi'));
     }
 
+    public function detail($id)
+    {
+        $donasi = Donasi::find($id);
+        return view('Donasi_Input', compact('donasi'));
+    }
+
     public function konfirmasi($id)
     {
         $donasi = Donasi::find($id);
