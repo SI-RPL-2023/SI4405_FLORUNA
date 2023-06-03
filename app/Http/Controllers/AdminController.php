@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Postingan;
+use App\Models\Transaksi;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -50,6 +51,12 @@ class AdminController extends Controller
         $posting = Postingan::find($id);
         return view('Detail_Postingan', compact('posting'));
 
+    }
+
+    public function transaksi()
+    {
+        $transaksi = Transaksi::all();
+        return view('Admin.Data_Transaksi',compact('transaksi'));
     }
 
 }

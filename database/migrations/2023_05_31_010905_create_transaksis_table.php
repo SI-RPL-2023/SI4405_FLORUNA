@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('donasi_id');
-            $table->integer('donasi');
+            $table->integer('jumlah');
             $table->string('pembayaran');
             $table->timestamps();
         });

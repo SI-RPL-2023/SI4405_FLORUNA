@@ -17,7 +17,7 @@ class TransaksiController extends Controller
         $transaksi = new Transaksi();
         $transaksi->user_id = auth()->user()->id;
         $transaksi->donasi_id = $donasi->id;
-        $transaksi->donasi = $request->jumlah;
+        $transaksi->jumlah = $request->jumlah;
         $transaksi->pembayaran = $request->pembayaran;
         $transaksi->save();
 
