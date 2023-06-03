@@ -67,5 +67,6 @@ Route::post('/data/donasi/add', [DonasiController::class, 'post_adm']);
 Route::get('/data/donasi/detail/{id}', [DonasiController::class, 'detail_adm']);
 Route::get('/donasi/konfirmasi/{id}', [DonasiController::class, 'konfirmasi']);
 
+Route::get('/data/transaksi', [AdminController::class, 'transaksi']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);

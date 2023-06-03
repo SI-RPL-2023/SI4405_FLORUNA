@@ -55,15 +55,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for ($i = 1; $i < 6; $i++)
+                    @php
+                        $i=1;
+                    @endphp
+                    @foreach ($transaksi as $data)
                     <tr>
-                        <th scope="row">{{ $i }}</th>
-                        <td>Donasi Orang Utan</td>
-                        <td>02 April 2023</td>
-                        <td>Rp 150.000</td>
-                        <td><a href="#" class="btn btn-primary">Detail</a></td>
+                        <th scope="row">{{ $i++ }}</th>
+                        <td>{{ $data->donasi->judul }}</td>
+                        <td>{{ \Carbon\Carbon::parse($data->created_at)->format('j F Y') }}</td>
+                        <td>Rp {{ $data->jumlah }}</td>
+                        <td><a href="/donation/detail/{{ $data->donasi->id }}" class="btn btn-primary">Lihat Donasi</a></td>
                     </tr>
-                    @endfor
+                    @endforeach
                 </tbody>
             </table>
         </div>
