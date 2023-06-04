@@ -5,6 +5,8 @@
         <div class="container py-5">
             <div class="row bg-white g-5 my-5">
                 <div class="text-end">
+                    <a href="/postingan/update/{{ $posting->id }}"><i
+                        class="bi bi-pencil-square fs-3"></i></a>
                     <a href="/data/postingan/delete/{{ $posting->id }}"><i
                             class="bi bi-trash-fill fs-3 text-danger"></i></a>
                 </div>

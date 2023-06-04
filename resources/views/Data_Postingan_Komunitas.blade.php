@@ -8,8 +8,12 @@
                     <div class="col">
                         <div class="card h-100 bg-white p-4">
                             <div class="card-body text-center">
-                                <div class="text-end"><a href="/data/postingan/delete/{{ $data->id }}"><i
-                                            class="bi bi-trash-fill fs-3 text-danger"></i></a></div>
+                                <div class="text-end">
+                                    <a href="/postingan/update/{{ $data->id }}"><i
+                                            class="bi bi-pencil-square fs-3"></i></a>
+                                    <a href="/data/postingan/delete/{{ $data->id }}"><i
+                                            class="bi bi-trash-fill fs-3 text-danger"></i></a>
+                                </div>
                                 <h1 class="display-5">{{ $data->judul }}</h1>
                                 <img src="{{ asset('upload/Postingan/' . $data->gambar) }}" alt="" width="300">
                                 <div class="text-center my-2">

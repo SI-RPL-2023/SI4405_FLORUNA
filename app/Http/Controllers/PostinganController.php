@@ -8,17 +8,15 @@ use Illuminate\Support\Facades\File;
 
 class PostinganController extends Controller
 {
-
-
     public function allpost()
     {
-        $first = Postingan::where('status','=','Terkonfirmasi')->latest()->first();
+        $first = Postingan::where('status', '=', 'Terkonfirmasi')->latest()->first();
         if (!$first) {
             $postingan = Postingan::all();
-        }else{
-            $postingan = Postingan::where('id','!=',$first->id)->where('status','=','Terkonfirmasi')->latest()->get();
+        } else {
+            $postingan = Postingan::where('id', '!=', $first->id)->where('status', '=', 'Terkonfirmasi')->latest()->get();
         }
-        return view('News', compact('postingan','first'));
+        return view('News', compact('postingan', 'first'));
     }
 
     public function detail_news($id)
@@ -63,7 +61,6 @@ class PostinganController extends Controller
     {
         $posting = Postingan::find($id);
         return view('Detail_Postingan', compact('posting'));
-
     }
 
     public function konfirmasi($id)
@@ -83,5 +80,35 @@ class PostinganController extends Controller
         $posting->delete();
 
         return back();
+    }
+
+    public function update($id)
+    {
+        $posting = Postingan::find($id);
+
+        return view('Postingan_Update', compact('posting'));
+    }
+
+    public function ubah(Request $request, $id)
+    {
+        $posting = Postingan::find($id);
+
+        if ($request->foto) {
+            $path = public_path() . '/upload/Postingan/';
+            File::makeDirectory($path, $mode = 0777, true, true);
+
+            $foto = $request->foto->getClientOriginalName() . '-' . time() . '- Postingan -'
+                . '.' . $request->foto->extension();
+            $request->foto->move($path, $foto);
+            $posting->gambar = $foto;
+        }
+
+        $posting->komunitas_id = auth()->user()->id;
+        $posting->judul = $request->judul;
+        $posting->lokasi = $request->lokasi;
+        $posting->keterangan = $request->keterangan;
+        $posting->save();
+
+        return redirect('/postingan/detail/'.$id);
     }
 }
