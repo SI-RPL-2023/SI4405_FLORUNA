@@ -32,6 +32,7 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/profile', [ProfileController::class, 'index']);
+Route::post('/update/profile', [ProfileController::class, 'update']);
 
 Route::get('/discover/news',[PostinganController::class, 'allpost']);
 Route::get('/discover/news/detail/{id}',[PostinganController::class, 'detail_news']);
