@@ -48,6 +48,8 @@ Route::get('/komunitas/posting', [PostinganController::class, 'data_posting']);
 Route::get('/postingan/detail/{id}', [PostinganController::class, 'detail']);
 Route::get('/posting', [PostinganController::class, 'index']);
 Route::post('/posting', [PostinganController::class, 'upload']);
+Route::get('/postingan/update/{id}', [PostinganController::class, 'update']);
+Route::post('/postingan/update/{id}', [PostinganController::class, 'ubah']);
 
 Route::get('/dashboard', [AdminController::class, 'index']);
 Route::get('/data/user', [AdminController::class, 'data_user']);
