@@ -43,32 +43,40 @@
                 <h1 class="display-6 text-white">Donate</h1>
             </div>
             <div class="container">
-                <div class="row row-cols-1 row-cols-md-2 g-5">
-                    @for ($i = 0; $i < 2; $i++)
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    @foreach ($donasi as $data)
                         <div class="col">
-                            <div class="card border-0 h-100 text-center">
-                                <img src="{{ asset('donasi/Orang Utan.jpg') }}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Donation Title</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Dignissimos dolore iste sapiente et maxime, voluptatem, soluta doloribus sit ducimus
-                                        rerum, tenetur vel. Repudiandae similique nisi quia laborum nobis totam non.</p>
+                            <div class="card h-100">
+                                <div class="img">
+                                    <img src="{{ asset('/upload/Donasi/' . $data->foto) }}" class="card-img-top"
+                                        alt="..." style="object-fit: cover; max-height: 300px">
                                 </div>
-                                <ul class="list-group list-group-flush mb-4">
-                                    <li class="list-group-item">
-                                        @guest
-                                            <small class="text-muted"><a href="/login"
-                                                    class="btn px-5 btn-primary">Donate</a></small>
-                                        @endguest
-                                        @auth
-                                            <small class="text-muted"><a href="#"
-                                                    class="btn px-5 btn-primary">Donate</a></small>
-                                        @endauth
-                                    </li>
-                                </ul>
+                                <div class="card-body">
+                                    <h5 class="card-title">Judul Donasi</h5>
+                                    <div class="text-end">
+                                        {{ $data->terkumpul / $data->target }}%
+                                    </div>
+                                    <div class="progress my-3" role="progressbar" aria-label="Example with label"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: {{ $data->terkumpul / $data->target }}%">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4>Rp {{ $data->terkumpul }}</h4>
+                                            <p>Terkumpul</p>
+                                        </div>
+                                        <div class="col text-center">
+                                            <h4>{{ \Carbon\Carbon::parse($data->tutup)->diffInDays(\Carbon\Carbon::now()) }}
+                                                Hari</h4>
+                                            <p>Deadline</p>
+                                        </div>
+                                    </div>
+                                    <a href="/donation/detail/{{ $data->id }}" class="btn btn-success w-100">Donate</a>
+                                </div>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -80,65 +88,32 @@
                 <h1 class="display-6">News</h1>
             </div>
             <div class="row g-5 mt-5">
-                <div class="col">
-                    <div class="card h-100 border-0">
-                        <img src="{{ asset('news/kebakaran.jpg') }}" class="card-img shadow-lg bg-body" alt="...">
-                    </div>
-                </div>
-                <div class="col">
-                    <h1 class="fs-4 mb-4">Kebakaran Di Hutan X</h1>
-                    <p class="text-justify">
-                        {{ Str::limit(
-                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequatur
-                                                                                            incidunt tempore dignissimos sequi voluptas, laboriosam fuga officiis vitae! Accusantium ratione
-                                                                                            eos praesentium necessitatibus quos molestiae! Reprehenderit officia vitae excepturi consectetur
-                                                                                            ratione odio illo quas ea velit. Odio in omnis laudantium sapiente, harum dolorem consectetur
-                                                                                            cum dolor dignissimos esse voluptate adipisci et voluptatibus natus explicabo officia numquam.
-                                                                                            Suscipit earum veritatis officia cum at aut a recusandae totam pariatur dicta officiis, soluta
-                                                                                            voluptatem molestiae, quod iure. Repellendus saepe ipsam modi cum incidunt voluptatibus, debitis
-                                                                                            sequi similique reprehenderit, libero ipsum, ad rerum quibusdam consequatur quidem optio minus
-                                                                                            est officia praesentium facere exercitationem repellat quam tempora! Deserunt corporis minus
-                                                                                            ipsum maiores quia? Adipisci ullam vero reiciendis eveniet corrupti recusandae incidunt
-                                                                                            obcaecati deleniti itaque non autem perspiciatis illo eius voluptates nihil, porro reprehenderit
-                                                                                            enim qui ipsum. Aperiam quo animi repellendus. Nisi, praesentium aliquam? Soluta, dolorem! Optio
-                                                                                            est quas dolorum quasi unde culpa dicta nisi libero. Deserunt doloremque non dolorem vero?
-                                                                                            Accusantium quod, architecto in porro, voluptatibus perspiciatis non ratione, rerum sed
-                                                                                            exercitationem atque eius. Atque explicabo pariatur consequatur voluptate quasi quas! Nostrum,
-                                                                                            consectetur unde repellat placeat omnis enim tempora magnam, laboriosam officia quis labore nisi
-                                                                                            explicabo consequatur ducimus commodi dolores eveniet fugiat. Temporibus maxime iusto id
-                                                                                            voluptas recusandae tenetur, impedit porro assumenda eligendi, provident ipsam corrupti odit?
-                                                                                            Recusandae enim ut molestias fuga accusantium, excepturi doloremque officiis ducimus soluta est
-                                                                                            ex nulla numquam quibusdam? Suscipit eum debitis culpa, recusandae praesentium dolores voluptas
-                                                                                            ipsam mollitia laborum at omnis nihil expedita consectetur hic tempore fuga veniam quidem
-                                                                                            consequuntur, doloremque esse sed consequatur obcaecati dolore ducimus. Laudantium, eveniet
-                                                                                            fugit praesentium dolores obcaecati ut officia est ea libero provident, ab doloremque dolore
-                                                                                            iste placeat velit aperiam, sint delectus veniam reiciendis suscipit dolorum. Vel nobis nostrum
-                                                                                            fugit assumenda iure nihil molestiae aliquam, ipsum facere quam. Dolore animi et eius cum beatae
-                                                                                            voluptatum sit architecto similique tenetur saepe id maiores facere earum nihil eos consequatur,
-                                                                                            dicta corporis expedita quia sint. Molestias ex corrupti sequi voluptate repellat aut ab
-                                                                                            deserunt beatae autem quos, iure illo repudiandae tempore reprehenderit cum soluta voluptatibus
-                                                                                            exercitationem laboriosam expedita amet ea quidem facilis? Fugiat est excepturi cum nostrum
-                                                                                            tempora necessitatibus libero quaerat, eveniet numquam deleniti ut harum placeat adipisci fuga
-                                                                                            hic veritatis ab nam. Sit odit cupiditate, quis quae voluptatem nihil molestias facilis ducimus
-                                                                                            corrupti ratione, qui laborum aliquam modi quam, quos debitis. Repudiandae eaque temporibus
-                                                                                            beatae quae officia laboriosam, enim eligendi nulla perspiciatis, error consectetur. Repellat
-                                                                                            amet perspiciatis illum impedit porro molestias hic magnam ducimus inventore ex placeat
-                                                                                            recusandae, non, eligendi possimus, velit fuga ab voluptas ratione ea laborum. Cum recusandae
-                                                                                            autem id optio veniam. Impedit repellendus sequi inventore architecto doloribus dolores
-                                                                                            asperiores atque. Id delectus laboriosam cupiditate quisquam, iusto quibusdam! Repellendus dolor
-                                                                                            odio tempore cum praesentium tenetur officiis rem laborum sit sequi consectetur hic quod
-                                                                                            doloribus vel perspiciatis asperiores, dolorum perferendis vero at enim molestiae. Quam harum
-                                                                                            aliquid a provident quia libero, autem necessitatibus asperiores blanditiis omnis dolorem ad
-                                                                                            commodi, aspernatur modi laborum unde sapiente temporibus doloribus. Reprehenderit ipsa ex
-                                                                                            dolorem cumque soluta. Esse, cum?',
-                            1000,
-                        ) }}
-                    </p>
+                @if ($first != Null)
+                    <div class="row g-5 my-5">
+                        <div class="col">
+                            <div class="card h-100 border-0">
+                                <img src="{{ asset('upload/Postingan/' . $first->gambar) }}"
+                                    class="shadow-lg bg-body mx-auto" width="300" alt="...">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h1 class="">{{ $first->judul }}</h1>
+                            <p class="mb-4">{{ $first->lokasi }}</p>
+                            <p class="text-justify">
+                                {{ Str::limit($first->keterangan, 1000) }}
+                            </p>
 
-                    <div class="text-end mt-4">
-                        <a href="#" class="btn btn-success">Read More</a>
+                            <div class="text-end mt-4">
+                                <a href="/discover/news/detail/{{ $first->id }}" class="btn btn-success">Read More</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @else
+                    <div class="py-5 my-5 text-center">
+                        <h1 class="icon-none"><i class="bi bi-camera"></i></h1>
+                        <h1 class="display-4 fw-bold">No Post Yet</h1>
+                    </div>
+                @endif
             </div>
         </div>
     </section>

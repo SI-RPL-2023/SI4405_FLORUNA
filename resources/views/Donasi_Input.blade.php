@@ -17,11 +17,11 @@
                     </div>
 
                     <div class="text-end">
-                        {{ $donasi->terkumpul / $donasi->target }}%
+                        {{ $donasi->terkumpul / $donasi->target *100 }}%
                     </div>
                     <div class="progress my-3" role="progressbar" aria-label="Example with label" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: {{ $donasi->terkumpul / $donasi->target }}%"></div>
+                        <div class="progress-bar" style="width: {{ $donasi->terkumpul / $donasi->target *100 }}%"></div>
                     </div>
 
                     <div class="row">

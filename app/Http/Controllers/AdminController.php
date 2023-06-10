@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donasi;
 use App\Models\Postingan;
 use App\Models\Transaksi;
 use App\Models\User;
@@ -11,7 +12,9 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('Admin.Dashboard');
+        $donasi = Donasi::latest()->get();
+        $news = Postingan::latest()->get();
+        return view('Admin.Dashboard', compact('donasi','news'));
     }
 
     public function data_user()
