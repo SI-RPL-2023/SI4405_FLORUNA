@@ -24,13 +24,14 @@
                                     alt="..." style="object-fit: cover; max-height: 300px">
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Judul Donasi</h5>
+                                <h5 class="card-title">{{ $data->judul }}</h5>
                                 <div class="text-end">
-                                    {{ $data->terkumpul / $data->target }}%
+                                    {{ ($data->terkumpul / $data->target) * 100 }}%
                                 </div>
                                 <div class="progress my-3" role="progressbar" aria-label="Example with label"
                                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                    <div class="progress-bar" style="width: {{ $data->terkumpul / $data->target }}%">
+                                    <div class="progress-bar"
+                                        style="width: {{ ($data->terkumpul / $data->target) * 100 }}%">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -81,41 +82,41 @@
                         $s = 0;
                     @endphp
                     @foreach ($news as $data)
-                    @if ($s == 3)
+                        @if ($s == 3)
                         @break
                     @endif
-                        <div class="col">
-                            <div class="card h-100 bg-white p-4">
-                                <div class="card-body text-center">
-                                    <div class="text-end"><a href="/data/postingan/delete/{{ $data->id }}"><i
-                                                class="bi bi-trash-fill fs-3 text-danger"></i></a></div>
-                                    <h1 class="display-5">{{ $data->judul }}</h1>
-                                    <img src="{{ asset('upload/Postingan/' . $data->gambar) }}" alt=""
-                                        width="300">
-                                    <div class="text-center my-2">
-                                        <p>Lokasi : {{ $data->lokasi }}</p>
-                                    </div>
-                                    <div class="card-text mb-5">
-                                        {{ $data->keterangan }}
-                                    </div>
-                                    @if ($data->status == 'Menunggu Konfirmasi')
-                                        <a href="/data/postingan/konfirmasi/{{ $data->id }}"
-                                            class="btn btn-success px-4">Konfirmasi</a>
-                                    @else
-                                        <button disabled="disabled" class="btn btn-success">Terkonfirmasi</button>
-                                    @endif
-                                    <a href="/data/postingan/detail/{{ $data->id }}"
-                                        class="btn btn-primary px-5">Detail</a>
+                    <div class="col">
+                        <div class="card h-100 bg-white p-4">
+                            <div class="card-body text-center">
+                                <div class="text-end"><a href="/data/postingan/delete/{{ $data->id }}"><i
+                                            class="bi bi-trash-fill fs-3 text-danger"></i></a></div>
+                                <h1 class="display-6">{{ $data->judul }}</h1>
+                                <img src="{{ asset('upload/Postingan/' . $data->gambar) }}" alt=""
+                                    width="300">
+                                <div class="text-center my-2">
+                                    <p>Lokasi : {{ $data->lokasi }}</p>
                                 </div>
+                                <div class="card-text mb-5">
+                                    {{ Str::limit($data->keterangan, 300) }}
+                                </div>
+                                @if ($data->status == 'Menunggu Konfirmasi')
+                                    <a href="/data/postingan/konfirmasi/{{ $data->id }}"
+                                        class="btn btn-success px-4">Konfirmasi</a>
+                                @else
+                                    <button disabled="disabled" class="btn btn-success">Terkonfirmasi</button>
+                                @endif
+                                <a href="/data/postingan/detail/{{ $data->id }}"
+                                    class="btn btn-primary px-5">Detail</a>
                             </div>
                         </div>
-                        @php
-                            $s++;
-                        @endphp
-                    @endforeach
-                </div>
+                    </div>
+                    @php
+                        $s++;
+                    @endphp
+                @endforeach
             </div>
         </div>
     </div>
+</div>
 </section>
 @endsection

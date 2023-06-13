@@ -27,17 +27,17 @@
                     </div>
                 </div>
                 <h1 class="fs-5 mb-3">Another News</h1>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
                     @foreach ($postingan as $data)
                         <div class="col">
                             <div class="card h-100 text-white shadow-lg border-0" style="max-height: 300px">
                                 <img src="{{ asset('upload/Postingan/' . $data->gambar) }}" class="card-img"
                                     style="object-fit: cover;max-height: 300px" alt="...">
-                                <div class="card-img-overlay">
+                                <div class="card-img-overlay bg-transparant">
                                     <h1 class="">{{ $data->judul }}</h1>
                                     <p class="mb-4">{{ $data->lokasi }}</p>
                                     <p class="text-justify">
-                                        {{ Str::limit($data->keterangan, 200) }}
+                                        {{ Str::limit($data->keterangan, 100) }}
                                     </p>
                                     <div class="text-end mt-4">
                                         <a href="/discover/news/detail/{{ $data->id }}" class="btn btn-success">Read

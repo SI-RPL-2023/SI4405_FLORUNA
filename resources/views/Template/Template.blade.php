@@ -44,8 +44,8 @@
                     </li> --}}
                     @auth
                         @if (auth()->user()->role == 'Comunity')
-                            <li class="nav-item"><a class="nav-link active" href="/posting">POSTING</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="/open/donation">DONATION</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/posting">POSTING</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/open/donation">DONATION</a></li>
                         @endif
                     @endauth
                 </ul>
@@ -68,8 +68,8 @@
                                         <li><a class="dropdown-item" href="/dashboard">Dashboard Admin</a></li>
                                     @endif
                                     @if (auth()->user()->role == 'Comunity')
-                                        <li><a class="dropdown-item" href="/komunitas/posting">Postingan Komunitas</a></li>
-                                        <li><a class="dropdown-item" href="/komunitas/donation">Donasi Komunitas</a></li>
+                                    <li><a class="dropdown-item" href="/komunitas/posting">Postingan Komunitas</a></li>
+                                    <li><a class="dropdown-item" href="/komunitas/donation">Donasi Komunitas</a></li>
                                     @endif
                                     <li>
                                         <hr class="dropdown-divider">

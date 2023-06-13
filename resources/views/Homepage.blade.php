@@ -52,13 +52,14 @@
                                         alt="..." style="object-fit: cover; max-height: 300px">
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">Judul Donasi</h5>
+                                    <h5 class="card-title">{{ $data->judul }}</h5>
                                     <div class="text-end">
-                                        {{ $data->terkumpul / $data->target }}%
+                                        {{ ($data->terkumpul / $data->target) * 100 }}%
                                     </div>
                                     <div class="progress my-3" role="progressbar" aria-label="Example with label"
                                         aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: {{ $data->terkumpul / $data->target }}%">
+                                        <div class="progress-bar"
+                                            style="width: {{ ($data->terkumpul / $data->target) * 100 }}%">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -88,7 +89,7 @@
                 <h1 class="display-6">News</h1>
             </div>
             <div class="row g-5 mt-5">
-                @if ($first != Null)
+                @if ($first != null)
                     <div class="row g-5 my-5">
                         <div class="col">
                             <div class="card h-100 border-0">

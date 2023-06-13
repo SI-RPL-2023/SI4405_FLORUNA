@@ -17,13 +17,13 @@
                                 style="object-fit: cover; max-height: 300px">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Judul Donasi</h5>
+                            <h5 class="card-title">{{ $data->judul }}</h5>
                             <div class="text-end">
-                                {{ $data->terkumpul / $data->target }}%
+                                {{ ($data->terkumpul / $data->target) * 100 }}%
                             </div>
                             <div class="progress my-3" role="progressbar" aria-label="Example with label" aria-valuenow="25"
                                 aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: {{ $data->terkumpul / $data->target }}%"></div>
+                                <div class="progress-bar" style="width: {{ ($data->terkumpul / $data->target) * 100 }}%"></div>
                             </div>
                             <div class="row">
                                 <div class="col text-center">
@@ -39,14 +39,17 @@
                             <div class="row">
                                 <div class="col">
                                     @if ($data->status == 'Belum Terkonfirmasi')
-                                        <button href="#!" class="btn btn-warning w-100" disabled>{{ $data->status }}</button>
+                                        <button href="#!" class="btn btn-warning w-100"
+                                            disabled>{{ $data->status }}</button>
                                     @endif
                                     @if ($data->status == 'Terkonfirmasi')
-                                        <button href="#!" class="btn btn-success w-100" disabled>{{ $data->status }}</button>
+                                        <button href="#!" class="btn btn-success w-100"
+                                            disabled>{{ $data->status }}</button>
                                     @endif
                                 </div>
                                 <div class="col">
-                                    <a href="/data/donasi/detail/{{ $data->id }}" class="btn btn-primary w-100">Detail</a>
+                                    <a href="/data/donasi/detail/{{ $data->id }}"
+                                        class="btn btn-primary w-100">Detail</a>
                                 </div>
                             </div>
                         </div>
